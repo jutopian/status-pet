@@ -1,0 +1,32 @@
+# Settings and log (each PC makes its own)
+settings.json
+status_pet.log
+
+# Test harness output
+tools/perf_settings_test.json
+
+# Installer build output (tools/build_installer.py)
+build/
+dist/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Logs and recordings
+*.log
+*.mp4
+
+# Secrets and keys (never commit)
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+
+# Editor and OS leftovers
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
