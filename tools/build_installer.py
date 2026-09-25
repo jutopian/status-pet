@@ -11,7 +11,8 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, ROOT)
+SRC = os.path.join(ROOT, "src")                 # the app
+sys.path.insert(0, SRC)
 from settings_ui import VERSION  # noqa: E402
 
 BUILD = os.path.join(ROOT, "build")
@@ -38,15 +39,15 @@ def main():
     shutil.rmtree(BUILD, ignore_errors=True)
     run([sys.executable, os.path.join("tools", "make_setup_art.py")])   # installer pictures -> build/art
     os.makedirs(os.path.join(STAGE, "hats"))
-    for f in glob.glob(os.path.join(ROOT, "hats", "*.png")):     # the hat PNGs in hats/ only
+    for f in glob.glob(os.path.join(SRC, "hats", "*.png")):     # the hat PNGs in hats/ only
         shutil.copy(f, os.path.join(STAGE, "hats"))
-    shutil.copytree(os.path.join(ROOT, "assets"), os.path.join(STAGE, "assets"))
+    shutil.copytree(os.path.join(SRC, "assets"), os.path.join(STAGE, "assets"))
     run([sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean", "--windowed", "--name", "Status Pet",
-         "--icon", os.path.join(ROOT, "assets", "app_icon.ico"),
+         "--icon", os.path.join(SRC, "assets", "app_icon.ico"),
          "--add-data", os.path.join(STAGE, "hats") + os.pathsep + "hats",
          "--add-data", os.path.join(STAGE, "assets") + os.pathsep + "assets",
          "--distpath", os.path.join(BUILD, "dist"), "--workpath", os.path.join(BUILD, "work"),
-         "--specpath", BUILD, os.path.join(ROOT, "status_pet.pyw")])
+         "--specpath", BUILD, os.path.join(SRC, "status_pet.pyw")])
     run([iscc(), f"/DAppVersion={VERSION}", os.path.join(ROOT, "installer", "status_pet.iss")])
     print("done:", os.path.join(ROOT, "dist", f"StatusPet-Setup-{VERSION}.exe"))
 

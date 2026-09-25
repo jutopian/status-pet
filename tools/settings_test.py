@@ -5,7 +5,7 @@ Uses a throwaway settings file and a throwaway hats folder copy, so your own fil
 import ctypes, importlib.machinery, importlib.util, os, shutil, sys, tempfile, time, traceback
 
 OUT = os.path.dirname(os.path.abspath(__file__))
-PROJECT = os.path.dirname(OUT)
+PROJECT = os.path.join(os.path.dirname(OUT), "src")   # the app
 sys.path.insert(0, PROJECT)
 ctypes.windll.shcore.SetProcessDpiAwareness(1)
 import gfx                                           # noqa: E402

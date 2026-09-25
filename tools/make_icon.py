@@ -1,4 +1,4 @@
-"""Builds assets/app_icon.ico: the wizard-hat slime.
+"""Builds src/assets/app_icon.ico: the wizard-hat slime.
 
 One 16 x 16 pixel design made from the gadget's own sprites, scaled by whole numbers (x1 ... x16) so every size
 stays sharp. Each size is stored as a PNG inside the .ico (Windows Vista and later read these).
@@ -10,12 +10,12 @@ import sys
 import tempfile
 import tkinter as tk
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, ROOT)
+SRC = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src")   # the app
+sys.path.insert(0, SRC)
 import sprites as sp  # noqa: E402
 
 SIZES = (16, 24, 32, 48, 64, 128, 256)
-OUT = os.path.join(ROOT, "assets", "app_icon.ico")
+OUT = os.path.join(SRC, "assets", "app_icon.ico")
 
 
 def icon_cells():

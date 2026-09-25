@@ -7,7 +7,7 @@ Passes if the process exits normally.
 """
 import ctypes, importlib.machinery, importlib.util, os, sys, threading, time
 
-PROJECT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src")   # the app
 sys.path.insert(0, PROJECT)
 ctypes.windll.shcore.SetProcessDpiAwareness(1)
 import gfx  # noqa: E402

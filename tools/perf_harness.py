@@ -6,7 +6,7 @@ outside every monitor, and no screen is captured. Pixel checks read the gadget's
 import ctypes, importlib.machinery, importlib.util, os, sys, time, traceback
 
 OUT = os.path.dirname(os.path.abspath(__file__))
-PROJECT = os.path.dirname(OUT)
+PROJECT = os.path.join(os.path.dirname(OUT), "src")   # the app
 sys.path.insert(0, PROJECT)
 ctypes.windll.shcore.SetProcessDpiAwareness(1)
 import gfx                                           # noqa: E402
