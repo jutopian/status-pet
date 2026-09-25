@@ -4,7 +4,7 @@ A small always-on-top Windows widget that shows your **CPU, GPU and RAM** usage,
 
 ![Status Pet](docs/screenshot.png)
 
-**Download:** [StatusPet-Setup.exe](https://github.com/jutopian/status-pet-releases/releases/latest/download/StatusPet-Setup.exe) (Windows 10 / 11, no Python needed) · **Website:** [jutopian.github.io/status-pet](https://jutopian.github.io/status-pet/)
+**Download:** [StatusPet-Setup.exe](https://github.com/jutopian/status-pet/releases/latest/download/StatusPet-Setup.exe) (Windows 10 / 11, no Python needed) · **Website:** [jutopian.github.io/status-pet](https://jutopian.github.io/status-pet/)
 
 ## Features
 

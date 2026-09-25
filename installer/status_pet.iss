@@ -4,7 +4,7 @@
 ; Per-user install: no admin rights needed. Settings live in %LOCALAPPDATA%\Status Pet and are kept on uninstall.
 
 #ifndef AppVersion
-  #define AppVersion "1.0"
+  #define AppVersion "1.0.1"
 #endif
 #define AppName "Status Pet"
 #define AppExe "Status Pet.exe"

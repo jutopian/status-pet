@@ -20,7 +20,7 @@ import sprites_pumpkin as spp
 from selfusage import SelfUsage
 from update_check import open_page
 
-VERSION = "1.0"
+VERSION = "1.0.1"
 KEY = "#010203"                 # window color made fully transparent: gives the rounded corners
 PER_PAGE = 5                    # tiles per row; past that, ‹ › arrows
 TILE, SOFT, PICK_BG, HOVER = "#272333", "#293333", "#17151E", "#2A2636"
